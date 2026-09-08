@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Arunav Anand — CSE-IoT Engineering Student, Web Developer, AI Enthusiast & Future JLPT N2 Scholar. Explore projects, skills, and achievements." />
+  <meta name="keywords" content="Arunav Anand, portfolio, CSE IoT, web developer, AI enthusiast, JLPT, hackathon, Google Student Ambassador" />
+  <meta property="og:title" content="Arunav Anand | Portfolio" />
+  <meta property="og:description" content="CSE-IoT Engineer · Web Developer · AI Enthusiast · Japanese Language Learner" />
+  <title>Arunav Anand | Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====== CYBER-SAKURA BACKGROUND SYSTEM ====== -->
+  <!-- Full-page IoT node network canvas -->
+  <canvas id="cyberNetCanvas" aria-hidden="true"></canvas>
+  <!-- Dot-grid mesh overlay (pure CSS, see style.css) -->
+  <div id="cyberMesh" aria-hidden="true"></div>
+
+  <!-- ====== NAVIGATION ====== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Arunav Anand Home">
+        <span class="logo-text">AA</span>
+        <span class="logo-dot"></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section class="hero" id="hero" aria-label="Hero section">
+    <!-- Particle canvas -->
+    <canvas id="petalsCanvas" aria-hidden="true"></canvas>
+
+    <!-- Sakura branch watermark -->
+    <div class="sakura-branch-watermark top-right" aria-hidden="true">
+      <svg viewBox="0 0 420 480" fill="none" xmlns="http://www.w3.org/2000/svg" class="branch-svg">
+        <path d="M380 20 Q300 80 260 160 Q220 240 240 340 Q260 420 200 480" stroke="#FF9EBB" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.18"/>
+        <path d="M260 160 Q210 120 170 100" stroke="#FF9EBB" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.15"/>
+        <path d="M240 240 Q280 200 310 195" stroke="#FF9EBB" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.15"/>
+        <path d="M235 310 Q190 290 160 270" stroke="#FF9EBB" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.13"/>
+        <!-- Blossoms -->
+        <g opacity="0.2">
+          <circle cx="165" cy="98" r="8" fill="#FF9EBB"/>
+          <circle cx="175" cy="88" r="5" fill="#F7768E"/>
+          <circle cx="155" cy="90" r="5" fill="#FF9EBB"/>
+          <circle cx="168" cy="80" r="4" fill="#F7768E"/>
+        </g>
+        <g opacity="0.18">
+          <circle cx="315" cy="192" r="8" fill="#FF9EBB"/>
+          <circle cx="325" cy="183" r="5" fill="#F7768E"/>
+          <circle cx="305" cy="185" r="5" fill="#FF9EBB"/>
+        </g>
+        <g opacity="0.15">
+          <circle cx="158" cy="268" r="7" fill="#FF9EBB"/>
+          <circle cx="148" cy="260" r="4" fill="#F7768E"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Sakura branch bottom-left watermark -->
+    <div class="sakura-branch-watermark bottom-left" aria-hidden="true">
+      <svg viewBox="0 0 300 350" fill="none" xmlns="http://www.w3.org/2000/svg" class="branch-svg branch-svg-bl">
+        <path d="M20 350 Q80 280 110 200 Q140 120 120 60 Q110 20 160 10" stroke="#FF9EBB" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.12"/>
+        <path d="M110 200 Q70 170 50 150" stroke="#FF9EBB" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.1"/>
+        <path d="M115 140 Q150 130 170 110" stroke="#FF9EBB" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.1"/>
+        <g opacity="0.13">
+          <circle cx="48" cy="148" r="6" fill="#FF9EBB"/>
+          <circle cx="38" cy="140" r="4" fill="#F7768E"/>
+        </g>
+        <g opacity="0.12">
+          <circle cx="172" cy="108" r="7" fill="#FF9EBB"/>
+          <circle cx="162" cy="100" r="4" fill="#F7768E"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-greeting">
+        <span class="greeting-badge">
+          <span class="badge-dot"></span>
+          <span>Available for opportunities</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title">
+        Hi, I'm <span class="name-highlight">Arunav Anand</span>.
+      </h1>
+
+      <div class="hero-subtitle">
+        <span class="static-text">I am a </span>
+        <span class="typed-text" id="typedText" aria-live="polite"></span>
+        <span class="cursor-blink" aria-hidden="true">|</span>
+      </div>
+
+      <p class="hero-desc">
+        Building intelligent systems at the intersection of <span class="accent-pink">IoT</span>, <span class="accent-cherry">AI</span>, and <span class="accent-pink">Web</span> — while learning <ruby class="kanji">日本語<rt>Japanese</rt></ruby> on the side.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary" id="exploreBtn">
+          <span>Explore My Work</span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="btn btn-secondary" id="connectBtn">
+          <span>Let's Connect</span>
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub profile" id="heroGithub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn profile" id="heroLinkedin">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.goodreads.com/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Goodreads profile" id="heroGoodreads">
+          <i class="fas fa-book-open" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-label="Scroll down">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ====== ABOUT SECTION ====== -->
+  <section class="section about-section" id="about" aria-label="About me">
+    <div class="jp-watermark" aria-hidden="true">エンジニア</div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// who I am</span>
+        <h2 class="section-title">About <span class="accent-pink">Me</span></h2>
+        <p class="section-sub">The multidimensional developer behind the code.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text-col">
+          <div class="about-card glass-card" id="aboutCard">
+            <p class="about-narrative">
+              I'm a <strong class="accent-pink">Computer Science & Engineering</strong> student specialising in <strong class="accent-cherry">IoT</strong> at <em>Bakhtiyarpur College of Engineering</em>. My analytical mindset is sharpened by rigorous DSA problem-solving in C++ via Striver's A2Z roadmap, and I love building modular, responsive web interfaces using HTML, CSS, and JavaScript.
+            </p>
+            <p class="about-narrative">
+              Beyond the screen, I'm actively studying <strong class="accent-pink">Japanese 🇯🇵</strong> with a clear goal: clearing <strong>JLPT N2</strong> and eventually teaching it online. I also devour contemporary fiction and represent Google on campus as a <strong class="accent-cherry">Google Student Ambassador 2026</strong>.
+            </p>
+            <p class="about-narrative">
+              Whether it's architecting an AI-powered hackathon project or strategising a table tennis game, I bring the same energy — <em>curiosity, precision, and a dash of creative chaos.</em>
+            </p>
+
+            <div class="about-quote">
+              <span class="quote-mark">"</span>
+              Engineering is the art of making the impossible feel inevitable.
+              <span class="quote-mark">"</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-facts-col">
+          <div class="facts-grid">
+            <div class="fact-card glass-card" id="factCard1">
+              <div class="fact-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+              <div class="fact-label">Primary Stack</div>
+              <div class="fact-value">C++ · JS · HTML/CSS</div>
+            </div>
+            <div class="fact-card glass-card" id="factCard2">
+              <div class="fact-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+              <div class="fact-label">Focus Area</div>
+              <div class="fact-value">AI · IoT · DSA</div>
+            </div>
+            <div class="fact-card glass-card" id="factCard3">
+              <div class="fact-icon"><i class="fab fa-google" aria-hidden="true"></i></div>
+              <div class="fact-label">Campus Role</div>
+              <div class="fact-value">Google Student Ambassador 2026</div>
+            </div>
+            <div class="fact-card glass-card" id="factCard4">
+              <div class="fact-icon"><span class="jp-icon">語</span></div>
+              <div class="fact-label">Language Goal</div>
+              <div class="fact-value">JLPT N2 · Teaching Online</div>
+            </div>
+            <div class="fact-card glass-card" id="factCard5">
+              <div class="fact-icon"><i class="fas fa-table-tennis-paddle-ball" aria-hidden="true"></i></div>
+              <div class="fact-label">Sports</div>
+              <div class="fact-value">Table Tennis · Badminton</div>
+            </div>
+            <div class="fact-card glass-card" id="factCard6">
+              <div class="fact-icon"><i class="fas fa-book" aria-hidden="true"></i></div>
+              <div class="fact-label">Off-screen</div>
+              <div class="fact-value">Contemporary Fiction Reader</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SKILLS SECTION ====== -->
+  <section class="section skills-section" id="skills" aria-label="Skills and technologies">
+    <div class="jp-watermark" aria-hidden="true">ソフトウェア開発</div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// what I know</span>
+        <h2 class="section-title">Skills & <span class="accent-pink">Toolkit</span></h2>
+        <p class="section-sub">Languages, tools, and technologies in my arsenal.</p>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skill-category glass-card" id="skillLang">
+          <h3 class="skill-cat-title"><i class="fas fa-terminal" aria-hidden="true"></i> Languages</h3>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span>C++</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="85" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span>JavaScript</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="75" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span>HTML / CSS</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="88" style="width:0%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-info">
+                <span>Japanese (日本語)</span>
+                <span class="skill-pct">45%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-fill skill-fill-cherry" data-width="45" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card" id="skillTech">
+          <h3 class="skill-cat-title"><i class="fas fa-microchip" aria-hidden="true"></i> Tech & Tools</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">DSA (A2Z)</span>
+            <span class="tech-tag">IoT Systems</span>
+            <span class="tech-tag">Google Cloud</span>
+            <span class="tech-tag">Generative AI</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Git & GitHub</span>
+            <span class="tech-tag">REST APIs</span>
+            <span class="tech-tag">Prompt Eng.</span>
+            <span class="tech-tag">Responsive UI</span>
+            <span class="tech-tag">Linux CLI</span>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card" id="skillSoft">
+          <h3 class="skill-cat-title"><i class="fas fa-users" aria-hidden="true"></i> Soft Skills</h3>
+          <div class="soft-skills-list">
+            <div class="soft-skill">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <span>Technical Communication</span>
+            </div>
+            <div class="soft-skill">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <span>Hackathon Prototyping</span>
+            </div>
+            <div class="soft-skill">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <span>Teaching & Mentorship</span>
+            </div>
+            <div class="soft-skill">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <span>Cross-cultural Collaboration</span>
+            </div>
+            <div class="soft-skill">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <span>Leadership & Initiative</span>
+            </div>
+            <div class="soft-skill">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <span>Problem-first Thinking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROJECTS SECTION ====== -->
+  <section class="section projects-section" id="projects" aria-label="Projects and achievements">
+    <div class="jp-watermark" aria-hidden="true">プロジェクト</div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// what I've built</span>
+        <h2 class="section-title">Projects & <span class="accent-pink">Achievements</span></h2>
+        <p class="section-sub">Real code, real impact — from hackathons to the classroom.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Card 1: Bill-Wise AI -->
+        <article class="project-card glass-card featured-card" id="projBillwise">
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-badge badge-featured">
+              <i class="fas fa-star" aria-hidden="true"></i> Featured
+            </div>
+            <div class="card-tech-stack">
+              <span class="mini-tag">Gen AI</span>
+              <span class="mini-tag">Frontend</span>
+              <span class="mini-tag">FastAPI</span>
+            </div>
+          </div>
+          <div class="card-icon-wrap">
+            <i class="fas fa-robot card-icon" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-title">Bill-Wise AI</h3>
+          <p class="card-desc">
+            A generative AI solution built for the <strong>Hack2skill</strong> hackathon. Spearheaded the entire <strong class="accent-pink">frontend UI</strong>, concept integration, and core presentation. The intelligent bill-analysis engine leverages LLM capabilities to surface hidden insights in financial documents.
+          </p>
+          <div class="card-role">
+            <i class="fas fa-user-check" aria-hidden="true"></i>
+            <span><strong>My Role:</strong> Frontend Lead, UI/UX Design, Presentation</span>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="card-link" id="billwiseLink" aria-label="View Bill-Wise AI project">
+              View Project <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: Hackathon Powerhouse -->
+        <article class="project-card glass-card" id="projHackathon">
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-badge badge-hack">
+              <i class="fas fa-bolt" aria-hidden="true"></i> Hackathons
+            </div>
+            <div class="card-tech-stack">
+              <span class="mini-tag">AMD</span>
+              <span class="mini-tag">GenAI</span>
+              <span class="mini-tag">AI4Bharat</span>
+            </div>
+          </div>
+          <div class="card-icon-wrap">
+            <i class="fas fa-trophy card-icon" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-title">Hackathon Powerhouse</h3>
+          <p class="card-desc">
+            Active participant and rapid prototyper across high-stakes national challenges including <strong class="accent-pink">AMD Slingshot 2026</strong>, <strong class="accent-cherry">Gen AI Exchange</strong>, and <strong class="accent-pink">AI For Bharat</strong> — consistently pushing prototypes from idea to demo under pressure.
+          </p>
+          <div class="card-role">
+            <i class="fas fa-user-check" aria-hidden="true"></i>
+            <span><strong>Role:</strong> Full-stack Prototyper, Concept Ideation</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-link-muted">Multiple Events · Ongoing</span>
+          </div>
+        </article>
+
+        <!-- Card 3: Science Mela -->
+        <article class="project-card glass-card award-card" id="projScienceMela">
+          <div class="card-glow card-glow-cherry" aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-badge badge-award">
+              <i class="fas fa-medal" aria-hidden="true"></i> 🥉 3rd Place
+            </div>
+          </div>
+          <div class="card-icon-wrap">
+            <i class="fas fa-award card-icon card-icon-cherry" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-title">Science Mela — 3rd Place</h3>
+          <p class="card-desc">
+            Award-winning <strong class="accent-cherry">software project</strong> recognised for exceptional practical problem-solving and innovation. Demonstrated the power of engineering thinking applied to real-world scenarios, earning a podium finish among competitive entrants.
+          </p>
+          <div class="card-role">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            <span><strong>Achievement:</strong> 3rd Place · Software Innovation</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-link-muted award-badge-text">
+              <i class="fas fa-ribbon" aria-hidden="true"></i> Institutional Recognition
+            </span>
+          </div>
+        </article>
+
+        <!-- Card 4: Cloud & AI Upskilling -->
+        <article class="project-card glass-card" id="projCloud">
+          <div class="card-glow" aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-badge badge-cloud">
+              <i class="fas fa-cloud" aria-hidden="true"></i> Cloud
+            </div>
+            <div class="card-tech-stack">
+              <span class="mini-tag">GCP</span>
+              <span class="mini-tag">Gen AI</span>
+            </div>
+          </div>
+          <div class="card-icon-wrap">
+            <i class="fab fa-google card-icon" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-title">Cloud & AI Upskilling</h3>
+          <p class="card-desc">
+            Completed advanced modules in <strong class="accent-pink">Google Cloud Study Jam '25</strong>, covering cloud architecture fundamentals, serverless deployments, and hands-on generative AI application development on Vertex AI.
+          </p>
+          <div class="card-role">
+            <i class="fas fa-certificate" aria-hidden="true"></i>
+            <span><strong>Modules:</strong> Cloud Fundamentals · Generative AI · Vertex AI</span>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="card-link" id="cloudLink" aria-label="View Cloud certification">
+              View Credential <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== EXPERIENCE SECTION ====== -->
+  <section class="section experience-section" id="experience" aria-label="Experience and leadership">
+    <div class="jp-watermark" aria-hidden="true">経験とリーダーシップ</div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// what I've done</span>
+        <h2 class="section-title">Experience & <span class="accent-pink">Leadership</span></h2>
+        <p class="section-sub">Making an impact beyond the keyboard.</p>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item" id="expGoogle">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="exp-header">
+              <div class="exp-icon">
+                <i class="fab fa-google" aria-hidden="true"></i>
+              </div>
+              <div class="exp-meta">
+                <h3 class="exp-title">Google Student Ambassador</h3>
+                <span class="exp-org">Google · Bakhtiyarpur College of Engineering</span>
+                <span class="exp-period">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i> 2025 – 2026
+                </span>
+              </div>
+              <div class="exp-badge">
+                <span class="badge-active">Active</span>
+              </div>
+            </div>
+            <p class="exp-desc">
+              Serving as the designated <strong class="accent-pink">campus technology leader</strong>, championing the integration of Google AI tools, Workspace products, and cloud technologies into student workflows. Organising workshops, leading study groups, and connecting peers with Google's developer ecosystem — from Cloud Study Jams to Gen AI hackathons.
+            </p>
+            <div class="exp-highlights">
+              <span class="exp-tag"><i class="fas fa-users" aria-hidden="true"></i> Campus Workshops</span>
+              <span class="exp-tag"><i class="fas fa-cloud" aria-hidden="true"></i> Google Cloud Evangelist</span>
+              <span class="exp-tag"><i class="fas fa-lightbulb" aria-hidden="true"></i> AI Tools Adoption</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="expMentor">
+          <div class="timeline-dot timeline-dot-cherry"></div>
+          <div class="timeline-content glass-card">
+            <div class="exp-header">
+              <div class="exp-icon exp-icon-cherry">
+                <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+              </div>
+              <div class="exp-meta">
+                <h3 class="exp-title">Tutor & Mentor</h3>
+                <span class="exp-org">Freelance · Mathematics, Science & Sanskrit</span>
+                <span class="exp-period">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i> 2023 – Present
+                </span>
+              </div>
+              <div class="exp-badge">
+                <span class="badge-ongoing">Ongoing</span>
+              </div>
+            </div>
+            <p class="exp-desc">
+              Provided personalised <strong class="accent-cherry">tutoring services</strong> in Mathematics, Science, and Sanskrit, developing strong communication, patience, and the ability to break down complex concepts for diverse learners. This experience honed my teaching skills — directly preparing me for my future goal of teaching Japanese online.
+            </p>
+            <div class="exp-highlights">
+              <span class="exp-tag"><i class="fas fa-calculator" aria-hidden="true"></i> Mathematics</span>
+              <span class="exp-tag"><i class="fas fa-flask" aria-hidden="true"></i> Science</span>
+              <span class="exp-tag"><span style="font-family: 'Noto Sans JP', sans-serif; font-size: 0.7rem;">अ</span> Sanskrit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" id="expJapanese">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="exp-header">
+              <div class="exp-icon">
+                <span class="jp-exp-icon">日</span>
+              </div>
+              <div class="exp-meta">
+                <h3 class="exp-title">Japanese Language Learner</h3>
+                <span class="exp-org">Self-directed · JLPT N2 Roadmap</span>
+                <span class="exp-period">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i> 2024 – Present
+                </span>
+              </div>
+              <div class="exp-badge">
+                <span class="badge-ongoing">In Progress</span>
+              </div>
+            </div>
+            <p class="exp-desc">
+              Actively pursuing Japanese language proficiency with the long-term goal of <strong class="accent-pink">JLPT N2 certification</strong>. Plans include launching an online teaching platform to make Japanese accessible to Indian learners — combining passion for language with an entrepreneurial mindset.
+            </p>
+            <div class="exp-highlights">
+              <span class="exp-tag">🎌 JLPT N2 Target</span>
+              <span class="exp-tag">📖 Hiragana · Katakana · Kanji</span>
+              <span class="exp-tag">🎯 Online Teaching Goal</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT SECTION ====== -->
+  <section class="section contact-section" id="contact" aria-label="Contact">
+    <div class="jp-watermark" aria-hidden="true">お問い合わせ</div>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// get in touch</span>
+        <h2 class="section-title">Let's <span class="accent-pink">Connect</span></h2>
+        <p class="section-sub">Open to collaborations, hackathons, freelance, and great conversations.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info-col">
+          <div class="contact-info-card glass-card">
+            <h3 class="contact-sub-title">Drop me a message 💬</h3>
+            <p class="contact-blurb">Whether you're a recruiter, a fellow developer, a hackathon organiser, or someone wanting to learn Japanese — my inbox is always open.</p>
+
+            <div class="contact-links-list">
+              <a href="mailto:arunav@example.com" class="contact-link-item" id="emailLink">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <span>arunav@example.com</span>
+              </a>
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="linkedinLink">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                <span>linkedin.com/in/arunavanand</span>
+              </a>
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="githubLink">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <span>github.com/arunavanand</span>
+              </a>
+              <a href="https://www.goodreads.com/" target="_blank" rel="noopener noreferrer" class="contact-link-item" id="goodreadsLink">
+                <i class="fas fa-book-open" aria-hidden="true"></i>
+                <span>Goodreads · Book Shelf</span>
+              </a>
+              <a href="resume.pdf" download class="contact-link-item resume-link" id="resumeLink">
+                <i class="fas fa-file-arrow-down" aria-hidden="true"></i>
+                <span>Download Resume</span>
+                <span class="resume-badge">PDF</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-col">
+          <form class="contact-form glass-card" id="contactForm" novalidate aria-label="Contact form">
+            <div class="form-group">
+              <label for="formName">Name</label>
+              <input type="text" id="formName" name="name" placeholder="Your full name" autocomplete="name" required />
+              <span class="field-error" id="nameError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="formEmail">Email</label>
+              <input type="email" id="formEmail" name="email" placeholder="your@email.com" autocomplete="email" required />
+              <span class="field-error" id="emailError" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="formSubject">Subject</label>
+              <input type="text" id="formSubject" name="subject" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" name="message" rows="5" placeholder="Tell me what's on your mind..." required></textarea>
+              <span class="field-error" id="messageError" role="alert"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
+            <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <span>Message sent! I'll reply within 24 hours. 🌸</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-sakura-line" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text footer-logo">AA</span>
+        <span class="footer-tagline">Arunav Anand · CSE-IoT · Builder of Things</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.goodreads.com/" target="_blank" rel="noopener noreferrer" aria-label="Goodreads">
+          <i class="fas fa-book-open" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="footer-jp">
+        <span>桜のように — Like cherry blossoms.</span>
+      </div>
+      <p class="footer-copy">
+        © 2026 Arunav Anand. Crafted with <span class="accent-pink">♥</span> & <span class="jp-small">日本語</span> vibes.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
